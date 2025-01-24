@@ -1,0 +1,14 @@
+# Version control
+.git
+.gitignore
+
+# Data directory
+pb_data/
+
+# IDE files
+.idea/
+.vscode/
+
+# Documentation
+README.md
+LICENSE
