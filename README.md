@@ -54,13 +54,19 @@ If this is your user and group ID then a folder created by you will suffice for 
 
 PocketBase requires that you create an admin user first.
 
-One way to do this is to run the following command:
+One way to do this is to run the following command if the container is _not_ running yet:
 
 ```bash
-docker run -v pb_data:/pb_data helmuthb/pocketbase superuser upsert EMAIL PASS
+docker run -v pb_data:/pb_data helmuthb/pocketbase /pocketbase superuser upsert EMAIL PASS
 ```
 
-Change the words `EMAIL` and `PASS` to your own email and the desired password.
+Or to use this command if the container is already running, e.g. with the name `my-pocketbase`:
+
+```bash
+docker exec -it my-pocketbase /pocketbase superuser upsert EMAIL PASS
+```
+
+In both cases, change the words `EMAIL` and `PASS` to contain your own email and the desired password.
 You can then change the password on the admin UI.
 
 ### Initial Access
