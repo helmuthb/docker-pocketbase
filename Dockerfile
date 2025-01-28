@@ -24,5 +24,6 @@ EXPOSE 8090
 # Define volume for persistence
 VOLUME /pb_data
 
-# Set the entrypoint
-ENTRYPOINT ["/pocketbase", "serve", "--http=0.0.0.0:8090"]
+# Set the entrypoint & command
+ENTRYPOINT ["/pocketbase"]
+CMD ["serve", "--http=0.0.0.0:8090"]
